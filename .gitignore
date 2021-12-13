@@ -30,3 +30,13 @@
 *.exe
 *.out
 *.app
+
+# Development
+/.localdev
+
+# VS
+*.vs
+*.vscode
+
+# VS Builds
+Builds/VisualStudio2019/x64
