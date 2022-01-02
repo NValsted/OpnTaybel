@@ -2,6 +2,9 @@
 
 <Project ToolsVersion="16.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
+    <Filter Include="OpnTaybel\Source\Envelopes">
+      <UniqueIdentifier>{6915FE3C-E2DB-CA95-1FEF-4879604FC6A1}</UniqueIdentifier>
+    </Filter>
     <Filter Include="OpnTaybel\Source\Components">
       <UniqueIdentifier>{BACF8D1D-A56F-1DC3-1DBA-C013A4277C79}</UniqueIdentifier>
     </Filter>
@@ -490,6 +493,15 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="..\..\Source\Envelopes\AHDSR.cpp">
+      <Filter>OpnTaybel\Source\Envelopes</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\Components\ADSRController.cpp">
+      <Filter>OpnTaybel\Source\Components</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\Components\BaseController.cpp">
+      <Filter>OpnTaybel\Source\Components</Filter>
+    </ClCompile>
     <ClCompile Include="..\..\Source\Components\OscillatorController.cpp">
       <Filter>OpnTaybel\Source\Components</Filter>
     </ClCompile>
@@ -518,6 +530,9 @@
       <Filter>OpnTaybel\Source</Filter>
     </ClCompile>
     <ClCompile Include="..\..\Source\Utils.cpp">
+      <Filter>OpnTaybel\Source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\BaseTable.cpp">
       <Filter>OpnTaybel\Source</Filter>
     </ClCompile>
     <ClCompile Include="..\..\JUCE\modules\juce_audio_basics\buffers\juce_AudioChannelSet.cpp">
@@ -2775,6 +2790,15 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="..\..\Source\Envelopes\AHDSR.h">
+      <Filter>OpnTaybel\Source\Envelopes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\Components\ADSRController.h">
+      <Filter>OpnTaybel\Source\Components</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\Components\BaseController.h">
+      <Filter>OpnTaybel\Source\Components</Filter>
+    </ClInclude>
     <ClInclude Include="..\..\Source\Components\OscillatorController.h">
       <Filter>OpnTaybel\Source\Components</Filter>
     </ClInclude>
@@ -2803,6 +2827,9 @@
       <Filter>OpnTaybel\Source</Filter>
     </ClInclude>
     <ClInclude Include="..\..\Source\Utils.h">
+      <Filter>OpnTaybel\Source</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\BaseTable.h">
       <Filter>OpnTaybel\Source</Filter>
     </ClInclude>
     <ClInclude Include="..\..\JUCE\modules\juce_audio_basics\audio_play_head\juce_AudioPlayHead.h">

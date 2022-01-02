@@ -1,12 +1,10 @@
 #pragma once
 
 #include <JuceHeader.h>
+#include "BaseController.h"
 #include "../AudioGenerator/Oscillator.h"
 
-typedef juce::AudioProcessorValueTreeState::SliderAttachment SliderAttachment;
-
-class WavetableController : private juce::AudioProcessorValueTreeState::Listener,
-                            public juce::Component
+class WavetableController : public BaseController
 {
 public:
     WavetableController(juce::AudioProcessorValueTreeState&);
@@ -22,7 +20,6 @@ public:
     void resized() override;
 
 private:
-    juce::AudioProcessorValueTreeState& parameters;
     WavetableOscillator* wavetableOscillator;
 
     juce::Slider tableStateSlider;
@@ -43,11 +40,10 @@ private:
 
     juce::Slider volumeSlider;
     juce::Slider panSlider;
-    juce::OwnedArray<SliderAttachment> sliderAttachments;
     
     float phaseOffset = 0.0f;
+    float INV_RAND_MAX = 1.0f / (float)RAND_MAX;
 
-    void addSlider(juce::Slider&, juce::String);
     void drawWavetable(juce::Graphics&);
     void parameterChanged(const juce::String &parameterID, float newValue) override;
 };

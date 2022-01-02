@@ -19,9 +19,8 @@ OpnTaybelAudioProcessor::OpnTaybelAudioProcessor()
     keyboardComponent(keyboardState, juce::MidiKeyboardComponent::horizontalKeyboard),
     synth(parameters)
 {
-    for (int i = 0; i < 4; ++i) {
-        synth.addVoice(new WavetableVoice(&synth));
-    }
+    int polyphonyCount = ((juce::AudioParameterInt*)parameters.getParameter("polyphony"))->get();
+    for (int i = 0; i < polyphonyCount; i++) { synth.addVoice(new WavetableVoice(&synth, i)); }
     synth.addSound(new WavetableSound());
 }
 
@@ -95,6 +94,7 @@ void OpnTaybelAudioProcessor::prepareToPlay(double sampleRate, int samplesPerBlo
 {
     synth.setCurrentPlaybackSampleRate(sampleRate);
     synth.getWavetableController(0)->getOscillator()->prepareToPlay(sampleRate);  // TODO: Should probably call preparyToPlay on synth and have it call this on its children 
+    synth.getADSRController(0)->prepareToPlay(sampleRate);
 }
 
 void OpnTaybelAudioProcessor::releaseResources()

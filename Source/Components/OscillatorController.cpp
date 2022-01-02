@@ -1,6 +1,6 @@
 #include "OscillatorController.h"
 
-WavetableController::WavetableController(juce::AudioProcessorValueTreeState& params) : parameters(params)
+WavetableController::WavetableController(juce::AudioProcessorValueTreeState& params) : BaseController(params)
 {
     wavetableOscillator = new WavetableOscillator(parameters);
 
@@ -69,7 +69,7 @@ float WavetableController::getPhaseOffset()
 
 float WavetableController::getRandomPhaseOffset()
 {
-    return (float)rand() / RAND_MAX
+    return (float)rand() * INV_RAND_MAX
         * parameters.getParameter("tablePhaseRand")->getNormalisableRange().convertFrom0to1(
             parameters.getParameter("tablePhaseRand")->getValue()
         ) * wavetableOscillator->tableSize;
@@ -102,6 +102,7 @@ void WavetableController::parameterChanged(const juce::String &parameterID, floa
 
 void WavetableController::paint(juce::Graphics& g)
 {
+    //drawTable(g, wavetableOscillator, getLocalBounds());
     drawWavetable(g);
 }
 
@@ -149,14 +150,8 @@ void WavetableController::drawWavetable(juce::Graphics& g)
                 wavetableOscillator->amplitudeRange.getStart(),
                 wavetableOscillator->amplitudeRange.getEnd(),
                 heightOver3,
-                (float)getLocalBounds().getHeight())
+                (float)getLocalBounds().getHeight()
+            )
         );
     }
-}
-
-void WavetableController::addSlider(juce::Slider& slider, juce::String paramID)
-{
-    addAndMakeVisible(slider);
-    slider.setSliderStyle(juce::Slider::SliderStyle::LinearBar);
-    sliderAttachments.add(new SliderAttachment(parameters, paramID, slider));
 }

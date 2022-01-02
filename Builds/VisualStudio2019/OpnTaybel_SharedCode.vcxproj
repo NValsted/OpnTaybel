@@ -137,6 +137,9 @@
     </Bscmake>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="..\..\Source\Envelopes\AHDSR.cpp"/>
+    <ClCompile Include="..\..\Source\Components\ADSRController.cpp"/>
+    <ClCompile Include="..\..\Source\Components\BaseController.cpp"/>
     <ClCompile Include="..\..\Source\Components\OscillatorController.cpp"/>
     <ClCompile Include="..\..\Source\Components\WheelSliders.cpp"/>
     <ClCompile Include="..\..\Source\AudioGenerator\UnisonVoice.cpp"/>
@@ -147,6 +150,7 @@
     <ClCompile Include="..\..\Source\PluginProcessor.cpp"/>
     <ClCompile Include="..\..\Source\PluginEditor.cpp"/>
     <ClCompile Include="..\..\Source\Utils.cpp"/>
+    <ClCompile Include="..\..\Source\BaseTable.cpp"/>
     <ClCompile Include="..\..\JUCE\modules\juce_audio_basics\buffers\juce_AudioChannelSet.cpp">
       <ExcludedFromBuild>true</ExcludedFromBuild>
     </ClCompile>
@@ -2244,6 +2248,9 @@
     <ClCompile Include="..\..\JuceLibraryCode\include_juce_opengl.cpp"/>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="..\..\Source\Envelopes\AHDSR.h"/>
+    <ClInclude Include="..\..\Source\Components\ADSRController.h"/>
+    <ClInclude Include="..\..\Source\Components\BaseController.h"/>
     <ClInclude Include="..\..\Source\Components\OscillatorController.h"/>
     <ClInclude Include="..\..\Source\Components\WheelSliders.h"/>
     <ClInclude Include="..\..\Source\AudioGenerator\UnisonVoice.h"/>
@@ -2254,6 +2261,7 @@
     <ClInclude Include="..\..\Source\PluginProcessor.h"/>
     <ClInclude Include="..\..\Source\PluginEditor.h"/>
     <ClInclude Include="..\..\Source\Utils.h"/>
+    <ClInclude Include="..\..\Source\BaseTable.h"/>
     <ClInclude Include="..\..\JUCE\modules\juce_audio_basics\audio_play_head\juce_AudioPlayHead.h"/>
     <ClInclude Include="..\..\JUCE\modules\juce_audio_basics\buffers\juce_AudioChannelSet.h"/>
     <ClInclude Include="..\..\JUCE\modules\juce_audio_basics\buffers\juce_AudioDataConverters.h"/>

@@ -16,6 +16,7 @@ public:
     ModWheel modWheel;
     PitchWheel pitchWheel;
     WavetableController* wavetableController;
+    ADSRController* adsrController;
 
 private:
     OpnTaybelAudioProcessor& audioProcessor;

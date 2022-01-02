@@ -6,7 +6,19 @@
               companyWebsite="https://github.com/NValsted/OpnTaybel" pluginCharacteristicsValue="pluginIsSynth,pluginWantsMidiIn">
   <MAINGROUP id="rhpdgc" name="OpnTaybel">
     <GROUP id="{A165A033-CF20-1507-A2AB-EB2244DA301F}" name="Source">
+      <GROUP id="{674B40DB-9A34-7E41-EBB0-4BE1F5BD7E4F}" name="Envelopes">
+        <FILE id="l0JM7A" name="AHDSR.cpp" compile="1" resource="0" file="Source/Envelopes/AHDSR.cpp"/>
+        <FILE id="CNp7sP" name="AHDSR.h" compile="0" resource="0" file="Source/Envelopes/AHDSR.h"/>
+      </GROUP>
       <GROUP id="{6EAD4A4E-08D6-DF70-33C8-BF3AD2DFC9CF}" name="Components">
+        <FILE id="RspNkU" name="ADSRController.cpp" compile="1" resource="0"
+              file="Source/Components/ADSRController.cpp"/>
+        <FILE id="ScceG0" name="ADSRController.h" compile="0" resource="0"
+              file="Source/Components/ADSRController.h"/>
+        <FILE id="HQ3Soz" name="BaseController.cpp" compile="1" resource="0"
+              file="Source/Components/BaseController.cpp"/>
+        <FILE id="onnSKZ" name="BaseController.h" compile="0" resource="0"
+              file="Source/Components/BaseController.h"/>
         <FILE id="uV1gSv" name="OscillatorController.cpp" compile="1" resource="0"
               file="Source/Components/OscillatorController.cpp"/>
         <FILE id="sfi3nG" name="OscillatorController.h" compile="0" resource="0"
@@ -36,6 +48,8 @@
       <FILE id="idsTZt" name="PluginEditor.h" compile="0" resource="0" file="Source/PluginEditor.h"/>
       <FILE id="zuJ3Hk" name="Utils.cpp" compile="1" resource="0" file="Source/Utils.cpp"/>
       <FILE id="rVd6Bn" name="Utils.h" compile="0" resource="0" file="Source/Utils.h"/>
+      <FILE id="cLjWex" name="BaseTable.cpp" compile="1" resource="0" file="Source/BaseTable.cpp"/>
+      <FILE id="rYroum" name="BaseTable.h" compile="0" resource="0" file="Source/BaseTable.h"/>
     </GROUP>
   </MAINGROUP>
   <JUCEOPTIONS JUCE_STRICT_REFCOUNTEDPOINTER="1" JUCE_VST3_CAN_REPLACE_VST2="0"/>

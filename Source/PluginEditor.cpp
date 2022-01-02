@@ -7,11 +7,13 @@ OpnTaybelAudioProcessorEditor::OpnTaybelAudioProcessorEditor(OpnTaybelAudioProce
                                                                                                            parameters(params)
 {
     wavetableController = audioProcessor.synth.getWavetableController(0);
+    adsrController = audioProcessor.synth.getADSRController(0);
     
     addAndMakeVisible(audioProcessor.keyboardComponent);
     addAndMakeVisible(modWheel);
     addAndMakeVisible(pitchWheel);
     addAndMakeVisible(wavetableController);
+    addAndMakeVisible(adsrController);
 
     setSize(800, 600);
 }
@@ -22,11 +24,10 @@ OpnTaybelAudioProcessorEditor::~OpnTaybelAudioProcessorEditor()
 
 void OpnTaybelAudioProcessorEditor::paint(juce::Graphics& g)
 {
-    g.fillAll(getLookAndFeel().findColour (juce::ResizableWindow::backgroundColourId));
+    g.fillAll(getLookAndFeel().findColour(juce::ResizableWindow::backgroundColourId));
 
     g.setColour(juce::Colours::white);
     g.setFont(15.0f);
-    g.drawFittedText("OpnTaybel", getLocalBounds(), juce::Justification::centred, 1);
 }
 
 void OpnTaybelAudioProcessorEditor::resized()
@@ -46,4 +47,5 @@ void OpnTaybelAudioProcessorEditor::resized()
     modWheel.setBounds(10, height - (kbcHeight + 10), 20, kbcHeight);
     pitchWheel.setBounds(40, height - (kbcHeight + 10), 20, kbcHeight);
     wavetableController->setBounds(10, 10, 400, 150);
+    adsrController->setBounds(10, wavetableController->getBottom() + 10, 400, 150);
 }

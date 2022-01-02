@@ -9,7 +9,9 @@
 
 #define _tableSize 2048
 #define _numberOfOscillators 4
+#define _numberOfAHDSRControllers 1
 
 juce::Array<juce::File> getWavetableFiles();
 std::unordered_map<juce::String, int> getWavetableMap();
+juce::Array<juce::RangedAudioParameter*> getModulableParameters();
 juce::AudioProcessorValueTreeState::ParameterLayout createParameterLayout();

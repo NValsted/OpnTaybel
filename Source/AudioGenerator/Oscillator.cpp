@@ -2,6 +2,7 @@
 
 WavetableOscillator::WavetableOscillator(juce::AudioProcessorValueTreeState& params) : parameters(params)
 {
+    // TODO: inherit from BaseTable
     formatManager.registerBasicFormats();
     wavetableMap = getWavetableMap();
     loadWavetableFromFile(
